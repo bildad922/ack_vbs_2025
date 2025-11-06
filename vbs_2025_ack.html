@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VBS 2025 - ACK St Peters Nyeri</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Section with Background Image */
+        .header-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .header-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1.5s ease-in-out;
+            z-index: -1;
+        }
+
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(116, 224, 101, 0.6);
+            z-index: -1;
+        }
+
+        .header-content {
+            padding: 20px;
+            max-width: 900px;
+            background: rgba(223, 116, 28, 0.7);
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 25px;
+            min-width: 130px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .countdown-value {
+            font-size: 3.5rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        /* Info Section with Background Image */
+        .info-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 20px;
+            overflow: hidden;
+        }
+
+        .info-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1.5s ease-in-out;
+            z-index: -1;
+        }
+
+        .info-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .info-content {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #1a2a6c;
+            margin-bottom: 30px;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        h3 {
+            color: #b21f1f;
+            margin: 20px 0;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            font-size: 1.4rem;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #1a2a6c;
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .church-name {
+            text-align: center;
+            font-size: 3.5rem;
+            margin: 30px 0;
+            color: #1a2a6c;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme {
+            text-align: center;
+            font-style: italic;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            color: #b21f1f;
+        }
+
+        .welcome-message {
+            line-height: 1.8;
+            font-size: 1.8rem;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .register-btn {
+            display: block;
+            width: 350px;
+            margin: 50px auto;
+            padding: 25px 40px;
+            background: linear-gradient(to right, #b21f1f, #fdbb2d);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 2.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .register-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .image-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .indicator {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: white;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .countdown-container {
+                flex-wrap: wrap;
+            }
+            
+            .countdown-box {
+                min-width: 100px;
+            }
+            
+            .countdown-value {
+                font-size: 2.5rem;
+            }
+            
+            .countdown-label {
+                font-size: 1.2rem;
+            }
+            
+            table, th, td {
+                font-size: 1.2rem;
+            }
+            
+            .register-btn {
+                width: 280px;
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section with Background Image -->
+    <section class="header-section">
+        <div class="header-bg active" style="background-image: url('https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="header-bg" style="background-image: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="header-bg" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="header-overlay"></div>
+        
+        <div class="header-content">
+            <h1>VBS 2025 Starts In</h1>
+            <div class="countdown-container">
+                <div class="countdown-box">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            <div class="image-indicators">
+                <div class="indicator active" data-section="header" data-index="0"></div>
+                <div class="indicator" data-section="header" data-index="1"></div>
+                <div class="indicator" data-section="header" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section with Background Image -->
+    <section class="info-section">
+        <div class="info-bg active" style="background-image: url('https://images.unsplash.com/photo-1516496636080-14fb876e029d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="info-bg" style="background-image: url('https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="info-bg" style="background-image: url('https://images.unsplash.com/photo-1518837689772-6c47b6c573d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="info-overlay"></div>
+        
+        <div class="info-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Venue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>December 1 - 3, 2025</td>
+                        <td>8:00 AM - 4:30 PM Daily</td>
+                        <td>ACK St Peters Church, Nyeri</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="church-name">ACK St Peters Nyeri</div>
+            <div class="theme">"The Parables Of Jesus Christ"</div>
+
+            <div class="welcome-message">
+                <p>Welcome dear parents! We're excited to invite your children to our Vacation Bible School 2025. Join us for a week of fun, learning, and spiritual growth as we explore The Parables of Jesus Christ.</p>
+            </div>
+
+            <a href="https://forms.gle/1DyPaFxBr87htRnB9" class="register-btn" target="_blank">REGISTER NOW</a>
+            
+            <div class="image-indicators">
+                <div class="indicator active" data-section="info" data-index="0"></div>
+                <div class="indicator" data-section="info" data-index="1"></div>
+                <div class="indicator" data-section="info" data-index="2"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('December 1, 2025 08:00:00').getTime();
+            const now = new Date().getTime();
+            const timeRemaining = targetDate - now;
+
+            if (timeRemaining > 0) {
+                const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.querySelector('h1').textContent = 'VBS 2025 Has Started!';
+                document.querySelector('.countdown-container').innerHTML = '<p style="font-size: 2rem;">Join us at ACK St Peters Church, Nyeri!</p>';
+            }
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+
+        // Background image slideshow for each section
+        function initSlideshow(section) {
+            const slides = document.querySelectorAll(`.${section}-bg`);
+            const indicators = document.querySelectorAll(`.indicator[data-section="${section}"]`);
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                // Hide all slides in this section
+                slides.forEach(slide => slide.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
+                
+                // Show the selected slide
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+                
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                let nextIndex = (currentSlide + 1) % slides.length;
+                showSlide(nextIndex);
+            }
+
+            // Auto-advance slides every 5 seconds
+            setInterval(nextSlide, 5000);
+
+            // Add click event to indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    showSlide(index);
+                });
+            });
+        }
+
+        // Initialize slideshows for both sections
+        initSlideshow('header');
+        initSlideshow('info');
+    </script>
+</body>
+</html>
